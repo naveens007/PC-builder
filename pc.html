@@ -118,6 +118,10 @@
         border: #ff3900 1px solid;
       }
 
+      button:disabled {
+        color: #73230D;
+      }
+
       ::-webkit-scrollbar {
         width: 10px;
         border-radius: 90px;
@@ -132,7 +136,7 @@
       ::-webkit-scrollbar-track:hover {
         box-shadow: inset 0 0 100px #333537;
         border-radius: 10px;
-        }
+      }
 
     </StylE>
 
@@ -242,8 +246,7 @@ Bench + 20%*GPU Bench + 25%*HDD Bench</b>
 </B>Some of these are builds use a G.SKILL Ripjaws series 3200 MHz CL16 DDR4 RAM. A new version of the same DDR4 RAM with CL14 has recently come.
             <bR/>
             <BR/>
-            <B>Note: </B>AMD says that the 2
-            <Sup>nd</SUP> generation Ryzen has a maximum memory bandwidth of 2933 Mhz. Some of our builds use RAM of higher bandwidth.
+<B>Note: </B>AMD says that the 2<Sup>nd</SUP> generation Ryzen has a maximum memory bandwidth of 2933 Mhz. Some of our builds use RAM of higher bandwidth.
           </P>
           <P>
             <BR/>
@@ -505,7 +508,8 @@ Bench + 20%*GPU Bench + 25%*HDD Bench</b>
       <br/><br/><br/><br/>
       <details>
         <summary id="S1" title="Build your own PC here">Build your own PC</summary>
-        <br/><button OnClick="loader()" title="Click again to restart">Start Build 🖥</button>
+        <br/>
+        <button id="load" OnClick="loader()" title="Click to start a build">Start Build 🖥</button>
         <iframe id="Builder"></iframe>
         <p><a hREF="http://www.userbenchmark.com/PCBuilder" Target="_blank" title="Build your own PC on UserBenchmark">Open in new tab</A></P>
 
@@ -514,16 +518,23 @@ Bench + 20%*GPU Bench + 25%*HDD Bench</b>
 
       <script>
         function loader() {
-          var go = confirm("Are you sure you want to continue?\nDo not leave the page until you're done!");
+
+        var go = confirm("Are you sure you want to continue?\nDo not leave the page until you're done!");
+
           if (go == true) {
 
+            document.getElementById("load").title = "Temprorarily saved here ⏳";
+            document.getElementById("load").innerHTML = "Started Build 🛠";
+            document.getElementById("load").disabled = true;
             document.getElementById("S1").innerHTML = "Build you own PC 💾";
-            document.getElementById("S1").title = "Temprorarily saved here ⏳";
-            document.getElementById("Builder").src = "http://userbenschmark.com/PCBuilder";
+            document.getElementById("S1").title = "Minimize/Maximize ⬇";
+            document.getElementById("Builder").src = "http://usserbenchmark.com/PCBuilder";
           } else {
 
             document.getElementById("S1").innerHTML = "Build you own PC 🚫";
-            document.getElementById("S1").title = "Building a PC canceled...try again ⛔";
+            document.getElementById("load").innerHTML = "Retry Build 🔄";
+            document.getElementById("load").title = "Click to retry build 🔄";
+            document.getElementById("S1").title = "Building a PC canceled ⛔";
           }
         }
 
@@ -538,4 +549,3 @@ Bench + 20%*GPU Bench + 25%*HDD Bench</b>
 </html>
 
 <!--This is the end of the HTML-->
-
