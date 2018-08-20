@@ -138,25 +138,6 @@
         border-radius: 10px;
       }
 
-      /* Center the loader */
-
-      #loader {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        z-index: 1;
-        width: 150px;
-        height: 150px;
-        margin: -75px 0 0 -75px;
-        border: 16px solid #f3f3f3;
-        border-radius: 50%;
-        border-top: 16px solid #3498db;
-        width: 120px;
-        height: 120px;
-        -webkit-animation: spin 2s linear infinite;
-        animation: spin 2s linear infinite;
-      }
-
       @-webkit-keyframes spin {
         0% {
           -webkit-transform: rotate(0deg);
@@ -238,7 +219,7 @@ All Brand names including AMD, Intel, Nvidia, MSi, ASUS, Corsair, Samsung, G.SKI
         PC Builds for budget hackers!
 
       </H1>
-      <div>
+      <div class="animate-bottom">
         <p>
 
           <B>Desktop 📺</b>: Surfing, email, office apps, music/video playback.
@@ -258,7 +239,7 @@ Bench + 10%*GPU Bench + 30%*SSD Bench + 10%*HDD Bench</B>
             (DCPU Bench = 80% Single core, 10% Quad core, 10% Multi core)
 
       </div><br/>
-      <div>
+      <div class="animate-bottom">
         <P>
           <P>
             <b>Gaming 🎮</b>: 3D Gaming and graphics.
@@ -282,7 +263,7 @@ Bench + 15%*SSD Bench + 10%*HDD Bench</B>
                   </P>
 
       </div><br/>
-      <div>
+      <div class="animate-bottom">
         <P>
           <P>
             <b>Workstation 🖥</b>: Number crunching, virtual machines, databases, audio/video encoding.
@@ -321,7 +302,7 @@ Bench + 20%*GPU Bench + 25%*HDD Bench</b>
             <BR/>
             <bR/>
     </div>
-    <div id="lst" stYlE="background: #3c454f">
+    <div id="lst" stYlE="background: #3c454f" class="animate-bottom">
 
 
       <!--Second Part-->
@@ -572,15 +553,15 @@ Bench + 20%*GPU Bench + 25%*HDD Bench</b>
         <Br/> Total: Rs 76,730</P>
 
 
+<br/>
 
-
-      <br/><br/><br/><br/>
+      <P>
       <details>
         <summary id="S1" class="collapsible" title="Build your own PC here">Build your own PC</summary>
         <br/>
         <button id="load" OnClick="loader()" title="Click to start a build">Start Build 🖥</button>
         <iframe id="Builder"></iframe>
-        <p><a hREF="http://www.userbenchmark.com/PCBuilder" Target="_blank" title="Build your own PC on UserBenchmark">Open in new tab</A></P>
+        <p><a hREF="http://www.userbenchmark.com/PCBuilder" Target="_blank" title="Build your own PC on UserBenchmark">Open in new tab</A></P></P>
 
       </details>
 
@@ -596,7 +577,7 @@ Bench + 20%*GPU Bench + 25%*HDD Bench</b>
             document.getElementById("load").disabled = true;
             document.getElementById("S1").innerHTML = "Build you own PC 💾";
             document.getElementById("S1").title = "Minimize/Maximize ⬇";
-            document.getElementById("Builder").src = "http://usserbenchmark.com/PCBuilder";
+            document.getElementById("Builder").src = "http://userbenchmark.com/PCBuilder";
           } else {
 
             document.getElementById("S1").innerHTML = "Build you own PC 🚫";
