@@ -576,10 +576,11 @@ Bench + 20%*GPU Bench + 25%*HDD Bench</b>
         <br/>
         <button id="load" OnClick="loader()" title="Click to start a build">Start Build 🖥</button>
         <iframe id="Builder"></iframe>
-        <p><a hREF="http://www.userbenchmark.com/PCBuilder" Target="_blank" title="Build your own PC on UserBenchmark">Open in new tab</A></P></P>
+        <p><a hREF="http://www.userbenchmark.com/PCBuilder" id="UB" title="Build your own PC on UserBenchmark" OnClick="check()">Load builder</A></P>
+        <br/>
+          <p>Open in new tab <input type="checkbox" id="CKbox"/></p>
 
       </details>
-
 
 
       <script>
@@ -601,6 +602,15 @@ Bench + 20%*GPU Bench + 25%*HDD Bench</b>
             document.getElementById("S1").title = "Building a PC canceled ⛔";
           }
         }
+
+          function check () {
+              if (document.getElementById("CKbox").checked = 'true') {
+
+                  document.getElementById("UB").target = '_blank';
+
+
+              }
+          }
 
       </script>
 
