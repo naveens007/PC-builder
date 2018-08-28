@@ -577,7 +577,7 @@ Bench + 20%*GPU Bench + 25%*HDD Bench</b>
         <button id="load" OnClick="loader()" title="Click to start a build">Start Build 🖥</button>
         <iframe id="Builder"></iframe>
         <p><a hREF="http://www.userbenchmark.com/PCBuilder" id="UB" title="Build your own PC on UserBenchmark" OnClick="check()">Load builder</A></P>
-        <br/>
+<br/>
           <p>Open in new tab <input type="checkbox" id="CKbox"/></p>
 
       </details>
@@ -586,31 +586,34 @@ Bench + 20%*GPU Bench + 25%*HDD Bench</b>
       <script>
         function loader() {
           var go = confirm("Are you sure you want to continue?\nDo not leave the page until you're done!");
+          var S1 = document.getElementById("S1");
+          var load = document.getElementById("load");
+          var bld = document.getElementById("Builder")
+
           if (go == true) {
 
-            document.getElementById("load").title = "Temporarily saved here ⏳";
-            document.getElementById("load").innerHTML = "Started Build 🛠";
-            document.getElementById("load").disabled = true;
-            document.getElementById("S1").innerHTML = "Build you own PC 💾";
-            document.getElementById("S1").title = "Minimize/Maximize ⬇";
-            document.getElementById("Builder").src = "http://userbenchmark.com/PCBuilder";
+            bld.src = "http://userbenchmark.com/PCBuilder";
+            load.title = "Temporarily saved here ⏳";
+            load.innerHTML = "Started Build 🛠";
+            load.disabled = true;
+            S1.innerHTML = "Build you own PC 💾";
+            S1.title = "Minimize/Maximize ⬇";
+
           } else {
 
-            document.getElementById("S1").innerHTML = "Build you own PC 🚫";
-            document.getElementById("load").innerHTML = "Retry Build 🔄";
-            document.getElementById("load").title = "Click to retry build 🔄";
-            document.getElementById("S1").title = "Building a PC canceled ⛔";
+            S1.innerHTML = "Build you own PC 🚫";
+            load.innerHTML = "Retry Build 🔄";
+            load.title = "Click to retry build 🔄";
+            S1.title = "Building a PC canceled ⛔";
           }
         }
 
           function check () {
               if (document.getElementById("CKbox").checked = 'true') {
-
                   document.getElementById("UB").target = '_blank';
-
-
               }
           }
+
 
       </script>
 
